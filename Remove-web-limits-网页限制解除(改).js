@@ -19,17 +19,28 @@
 // @homepageURL       https://cat7373.github.io/remove-web-limits/
 // @supportURL        https://greasyfork.org/zh-CN/scripts/28497
  
-// @icon               data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAABpElEQVR4nO3Vv2uUQRDG8c/ebSMWqay0trATAxrUSi1S2AiWFoJYpNCgoBjURsHWJKeNRfAvsDgFixQqKdPZ2ViEiCJYBOQu8f1hEXO59713j7MUfLZ6d2a/O8vMO0OzDnin9Ku2Mjvuaw07xgSAYEVXe2indMhj92zpKJLnBhF8MDeye9hn6zbN70eRiqCw02Bra3up8BBLu1FEBxsBucXqW4csz0ULe4jorSCMuPU89boRELDMHiI6Y8V65bbCUTccc70RkaOwKLOg0IkyXa9qTjOu2LAs6NZuD86hrdTyxRNTkUqqdhXlHrngGRVEZsMpJwex9DxIZSHYclesIb65LCoHgIs66UJq6btDBZHZrPh8V6YBOX66LbOkTGckBYimBW2FVTNeuOZNyrFJ236Yl4NSy5SbVm1PDvhodqgyMledTdRlAtDzqfL9tfkwUtyaRkv9LwFj9B/w7wPycXOhqlJ0yZHKPChMi5MCiM47XhsopbVJAUHfrYbmN/EToN+02eLPfz9OYyZhFJzW1Jn3lTsxaKQjCkp52jy45r1ZvSbTb9M0d4PBozGZAAAAAElFTkSuQmCC
+// @icon              data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAABpElEQVR4nO3Vv2uUQRDG8c/ebSMWqay0trATAxrUSi1S2AiWFoJYpNCgoBjURsHWJKeNRfAvsDgFixQqKdPZ2ViEiCJYBOQu8f1hEXO59713j7MUfLZ6d2a/O8vMO0OzDnin9Ku2Mjvuaw07xgSAYEVXe2indMhj92zpKJLnBhF8MDeye9hn6zbN70eRiqCw02Bra3up8BBLu1FEBxsBucXqW4csz0ULe4jorSCMuPU89boRELDMHiI6Y8V65bbCUTccc70RkaOwKLOg0IkyXa9qTjOu2LAs6NZuD86hrdTyxRNTkUqqdhXlHrngGRVEZsMpJwex9DxIZSHYclesIb65LCoHgIs66UJq6btDBZHZrPh8V6YBOX66LbOkTGckBYimBW2FVTNeuOZNyrFJ236Yl4NSy5SbVm1PDvhodqgyMledTdRlAtDzqfL9tfkwUtyaRkv9LwFj9B/w7wPycXOhqlJ0yZHKPChMi5MCiM47XhsopbVJAUHfrYbmN/EToN+02eLPfz9OYyZhFJzW1Jn3lTsxaKQjCkp52jy45r1ZvSbTb9M0d4PBozGZAAAAAElFTkSuQmCC
  
-// @version           4.4.6
+// @version           4.4.7
 // @license           LGPLv3
  
 // @match             *://*/*
 // @exclude        *www.bilibili.com/video*
 // @exclude        *www.bilibili.com/v*
+// @exclude        *www.bilibili.com/s/*
 // @exclude        *www.bilibili.com/bangumi*
+// @exclude        https://www.bilibili.com/medialist/play/*
 // @exclude        *www.youtube.com/watch*
 // @exclude        *www.panda.tv*
+// @exclude        *www.github.com*
+// @exclude        https://lanhuapp.com/*
+// @exclude        https://www.douyu.com/*
+// @exclude        https://www.zhihu.com/signin?*
+// @exclude        https://tieba.baidu.com/*
+// @exclude        https://v.qq.com/*
+// @exclude        *.taobao.com/*
+// @exclude        *tmall.com*
+// @exclude        *signin*
  
 // @connect     eemm.me
 // @grant       GM_getValue
@@ -138,7 +149,17 @@
             "www.xiegw.cn",
             "chuangshi.qq.com",
             "www.uta-net.com",
-            "www.bimiacg.net"
+            "www.bimiacg.net",
+            "www.dianyuan.com",
+            "origenapellido.com",
+            "3g.163.com",
+            "www.lu-xu.com",
+            "leetcode.cn",
+            "www.jianbiaoku.com",
+            "www.soyoung.com",
+            "doc.guandang.net",
+            "www.51dongshi.com",
+            "m.haodf.com",
         ]
     }
  
@@ -299,7 +320,7 @@
                 "margin: 0;" +
                 "padding: 0;" +
                 "vertical-align:middle;" +
-                "-webkit-appearance:checkbox;" +
+                "-webkit-appearance:checkbox !important;" +
                 "-moz-appearance:checkbox;" +
                 "position: static;" +
                 "clip: auto;" +
@@ -425,7 +446,7 @@
                 "<qxinbutton id='rwl-reset'>清空设置</qxinbutton> &nbsp;&nbsp;&nbsp;" +
                 "<qxinbutton id='rwl-setMenuSave'>保存</qxinbutton> &nbsp;&nbsp;&nbsp;" +
                 "<qxinbutton id='rwl-setMenuClose' onclick='this.parentNode.parentNode.removeChild(this.parentNode);' title='如果无法关闭 请刷新界面' >关闭</qxinbutton> &nbsp;&nbsp;&nbsp;" +
-                "<span style='font-size:0.7em;'>--| qxin v4.4.6 2021-06-09 |--</span>" +
+                "<span style='font-size:0.7em;'>--| qxin v4.4.7 2022-11-24 |--</span>" +
                 ""
             "";
             odom.innerHTML = innerH;
