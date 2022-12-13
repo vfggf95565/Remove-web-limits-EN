@@ -21,7 +21,7 @@
  
 // @icon              data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAABpElEQVR4nO3Vv2uUQRDG8c/ebSMWqay0trATAxrUSi1S2AiWFoJYpNCgoBjURsHWJKeNRfAvsDgFixQqKdPZ2ViEiCJYBOQu8f1hEXO59713j7MUfLZ6d2a/O8vMO0OzDnin9Ku2Mjvuaw07xgSAYEVXe2indMhj92zpKJLnBhF8MDeye9hn6zbN70eRiqCw02Bra3up8BBLu1FEBxsBucXqW4csz0ULe4jorSCMuPU89boRELDMHiI6Y8V65bbCUTccc70RkaOwKLOg0IkyXa9qTjOu2LAs6NZuD86hrdTyxRNTkUqqdhXlHrngGRVEZsMpJwex9DxIZSHYclesIb65LCoHgIs66UJq6btDBZHZrPh8V6YBOX66LbOkTGckBYimBW2FVTNeuOZNyrFJ236Yl4NSy5SbVm1PDvhodqgyMledTdRlAtDzqfL9tfkwUtyaRkv9LwFj9B/w7wPycXOhqlJ0yZHKPChMi5MCiM47XhsopbVJAUHfrYbmN/EToN+02eLPfz9OYyZhFJzW1Jn3lTsxaKQjCkp52jy45r1ZvSbTb9M0d4PBozGZAAAAAElFTkSuQmCC
  
-// @version           4.4.7
+// @version           4.4.8
 // @license           LGPLv3
  
 // @match             *://*/*
@@ -160,6 +160,9 @@
             "doc.guandang.net",
             "www.51dongshi.com",
             "m.haodf.com",
+            "www.daodoc.com",
+            "www.wcqjyw.com",
+            "www.szxx.com.cn",
         ]
     }
  
@@ -293,7 +296,7 @@
  
         var styleInner = "#rwl-iqxin{" +
                 "position:fixed;" +
-                "transform:translate(-95px,0);" +
+                "transform:translate(-95%,0);" +
                 "width:85px;" +
                 "height:25px;" +
                 "font-size:12px;" +
@@ -446,7 +449,7 @@
                 "<qxinbutton id='rwl-reset'>清空设置</qxinbutton> &nbsp;&nbsp;&nbsp;" +
                 "<qxinbutton id='rwl-setMenuSave'>保存</qxinbutton> &nbsp;&nbsp;&nbsp;" +
                 "<qxinbutton id='rwl-setMenuClose' onclick='this.parentNode.parentNode.removeChild(this.parentNode);' title='如果无法关闭 请刷新界面' >关闭</qxinbutton> &nbsp;&nbsp;&nbsp;" +
-                "<span style='font-size:0.7em;'>--| qxin v4.4.7 2022-11-24 |--</span>" +
+                "<span style='font-size:0.7em;'>--| qxin v4.4.8 2022-12-13 |--</span>" +
                 ""
             "";
             odom.innerHTML = innerH;
@@ -850,6 +853,7 @@
             case "www.z3z4.com": clear_covers(".moviedownaddiv"); break;
             case "huayu.baidu.com": clear_covers("#jqContextMenu"); break;
             case "www.myhtlmebook.com": clear_covers("img.fullimg"); break;
+            case "www.szxx.com.cn": clear_covers("img#adCover"); break;
             case "zhihu.com":
             case "www.zhihu.com": return rwl_userData.rules.rule_zhihu; break;
             case "t.bilibili.com": clear_link_bilibili(); break;
@@ -857,6 +861,10 @@
             case "www.longmabookcn.com": clear_covers(".fullimg"); return rwl_userData.rules.rule_plus; break;
             case "boke112.com": return rwl_userData.rules.rule_plus; break;
             case "www.shangc.net": return rwl_userData.rules.rule_plus; break;
+            // 去除弹窗
+            case "www.daodoc.com": clear_marks(".marks"); break;
+            case "www.wcqjyw.com": clear_marks(".marks"); break;
+            case "www.jianbiaoku.com": clear_marks(".layui-layer-shade"); break;
         }
         return rwl_userData.rules.rule_def;
     }
@@ -883,6 +891,15 @@
         odivs.forEach(function(value){
             value.setAttribute("style","");
         })
+    }
+
+    // 去除弹窗, 复制后会出现弹窗提示, 但实际已经复制成功
+    function clear_marks(node){
+        GM_addStyle(`
+            ${node} {
+                display: none !important;
+            }
+        `)
     }
  
     // 创世中文网
