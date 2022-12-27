@@ -269,8 +269,8 @@
 
         tempHeight = tempHeight<0?0:tempHeight
         node.style.cssText = "position:fixed;top:"+tempHeight+"px;left:"+rwl_userData.positionLeft+"px;right:"+rwl_userData.positionRight+"px;";
-        // node.innerHTML = '<label><input type="checkbox" name="" id="black_node">黑名单</label><qxinbutton id="delete">delete</btton>';
-        // node.innerHTML = '<label>限制解除 <input type="checkbox"  name="" id="black_node"></label>';
+        // node.innerHTML = '<label><input type="checkbox" name="" id="black_node">blacklist</label><qxinbutton id="delete">delete</btton>';
+        // node.innerHTML = '<label>Restrictions lifted <input type="checkbox"  name="" id="black_node"></label>';
         node.innerHTML = '<qxinbutton type="qxinbutton" id="rwl-setbtn"> set </qxinbutton> <lalala style="cursor:move; font-size:12px;">Restrictions lifted</lalala> <input type="checkbox" name="" id="black_node" >';
         if(window.self === window.top){
             if (document.querySelector("body")){
@@ -422,7 +422,7 @@
                     " ")
         var innerH = "" +
             "<p>Distance from the top (in pixels) <input id='positiontop' type='text' value=" + userSetting.positionTop + "></p>" + "" +
-            // "<laberl> <p>允许上传黑名单<input id='uploadchecked'  type='checkbox' " + upload_checked + "></p>" + "</laberl>" +
+            // "<laberl> <p>Allow blacklist uploads<input id='uploadchecked'  type='checkbox' " + upload_checked + "></p>" + "</laberl>" +
             "<p id='rwl-shortcuts' title='Shortcut Keys' > Shortcut Keys:" +
             "<select id='rwl-shortcut'>" +
             "<option value='off'" + (userSetting.shortcut == 0?"selected":"") + ">close</option>" +
@@ -431,22 +431,22 @@
             "<option value='ctrlc'" + (userSetting.shortcut == 3?"selected":"") + ">ctrl + C</option>" +
             "</select>" +
             "</p> " +
-            "<laberl> <p>Show button<input id='btnchecked'  type='checkbox' " + btnchecked + "> Click the Script Management extension to open the settings again</p>" + "</laberl>" +
+            "<laberl> <p>Show button <input id='btnchecked'  type='checkbox' " + btnchecked + "> Click the Script Management extension to open the settings again</p>" + "</laberl>" +
             "<p>Feedback address: <a target='_blank' href='https://github.com/qxinGitHub/Remove-web-limits-'>GitHub(qxin)</a>, <a target='_blank' href='https://greasyfork.org/zh-CN/scripts/28497-remove-web-limits-modified'>GreasyFork(qxin)</a>  </P>" +
             "<p>The original author of the project is <a target='_blank' href='https://cat7373.github.io/remove-web-limits/'>cat7373</a>, <a target='_blank' href='https://github.com/Cat7373/remove-web-limits'>Project home page</a> </P>" +
             "<p>The ability is limited and not every website can be perfect</P>" +
             "<p>If you give feedback, be sure to bring the detailed URL</P>" +
             "<p>  </P>" +
-            // "<p><s>显示按钮（待添加）</s></p>" +
-            // "<p><s>按钮透明度（待添加）</s></p>" +
-            // "<p><s>快速复制（待添加）</s></p>" +
-            // "<p><s>其他 (待添加）</s></p>" +
+            // "<p><s>Show button (to be added)</s></p>" +
+            // "<p><s>Button transparency (to be added)</s></p>" +
+            // "<p><s>Quick copy (to be added)</s></p>" +
+            // "<p><s>Other (to be added)</s></p>" +
             "<p>The data storage method is JSON. If you modify it here, pay attention to the quotation marks and commas</P>" +
             "<textarea wrap='off' cols='45' rows='20' style='overflow:auto;border-radius:4px;'>" + JSON.stringify(userSetting.data,false,4) + "</textarea>" +
             "<br>" +
-            "<qxinbutton id='rwl-reset'>Clear Settings</qxinbutton> &nbsp;&nbsp;&nbsp;" +
+            "<qxinbutton id='rwl-reset'>Reset Settings</qxinbutton> &nbsp;&nbsp;&nbsp;" +
             "<qxinbutton id='rwl-setMenuSave'>Save</qxinbutton> &nbsp;&nbsp;&nbsp;" +
-            "<qxinbutton id='rwl-setMenuClose' onclick='this.parentNode.parentNode.removeChild(this.parentNode);' title='If you can't close the interface > close</qxinbutton> &nbsp;&nbsp;&nbsp;" +
+            "<qxinbutton id='rwl-setMenuClose' onclick='this.parentNode.parentNode.removeChild(this.parentNode);' title='If you can't close the interface >Close</qxinbutton> &nbsp;&nbsp;&nbsp;" +
             "<span style='font-size:0.7em;'>--| qxin v4.4.8 2022-12-13 |--</span>" +
             ""
         "";
