@@ -778,7 +778,7 @@
         // Update data
         rwl_userData.data = lists.sort();
 
-        // 将本地黑名单上传
+        // Upload the local blacklist
         // if (rwl_userData.waitUpload.length > 0 && rwl_userData.connectToTheServer){
         //     // console.log("rwl : 上传...",rwl_userData.waitUpload);
         //     // console.log("rwl : 开始上传-----");
@@ -883,7 +883,7 @@
         }
     }
     // https://votetw.com/wiki/%E6%9E%97%E6%99%BA%E5%A0%85
-    // 会创建多个无id,无class的div,覆盖在文字上层
+    // Multiple divs with no id and no class will be created to cover the upper layer of the text
     function clear_votetw(){
         var odivs = document.querySelectorAll(".mw-parser-output>div")
         odivs.forEach(function(value){
